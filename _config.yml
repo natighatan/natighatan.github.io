@@ -57,19 +57,13 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name   : "Natighatan"
+  name   : "Nati Ghatan"
   avatar : "/assets/images/profile-photo.jpg"
   bio    : "Writing, essays, and notes."
   links:
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://natighatan.github.io/"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook"
       url: "https://www.facebook.com/NatiGhatan/"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/natighatan"
 
 footer:
   links:
