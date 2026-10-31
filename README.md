@@ -1,27 +1,53 @@
-# Minimal Mistakes remote theme starter
+# Natighatan
 
-Click [**Use this template**](https://github.com/mmistakes/mm-github-pages-starter/generate) button above for the quickest method of getting started with the [Minimal Mistakes Jekyll theme](https://github.com/mmistakes/minimal-mistakes).
+Personal writing site powered by Jekyll and the [Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/).
 
-Contains basic configuration to get you a site with:
+## Writing a post
 
-- Sample posts.
-- Sample top navigation.
-- Sample author sidebar with social links.
-- Sample footer links.
-- Paginated home page.
-- Archive pages for posts grouped by year, category, and tag.
-- Sample about page.
-- Sample 404 page.
-- Site wide search.
+Create a Markdown file in `_posts/` using this naming pattern:
 
-Replace sample content with your own and [configure as necessary](https://mmistakes.github.io/minimal-mistakes/docs/configuration/).
+```text
+YYYY-MM-DD-short-title.md
+```
 
+Add front matter at the top:
+
+```yaml
 ---
+title: "A post title"
+date: 2026-10-31
+categories:
+  - Essays
+tags:
+  - writing
+---
+```
 
-## Troubleshooting
+Then write the post below the closing `---`. The site will generate the post page, archives, tags, and categories automatically.
 
-If you have a question about using Jekyll, start a discussion on the [Jekyll Forum](https://talk.jekyllrb.com/) or [StackOverflow](https://stackoverflow.com/questions/tagged/jekyll). Other resources:
+## Run locally
 
-- [Ruby 101](https://jekyllrb.com/docs/ruby-101/)
-- [Setting up a Jekyll site with GitHub Pages](https://jekyllrb.com/docs/github-pages/)
-- [Configuring GitHub Metadata](https://github.com/jekyll/github-metadata/blob/master/docs/configuration.md#configuration) to work properly when developing locally and avoid `No GitHub API authentication could be found. Some fields may be missing or have incorrect data.` warnings.
+Install Ruby and Bundler, then run:
+
+```shell
+bundle install
+bundle exec jekyll serve --livereload
+```
+
+Open `http://localhost:4000` in a browser. Changes to posts and pages will be regenerated while the server is running.
+
+## Publish
+
+Commit and push changes to the configured GitHub Pages branch. GitHub Pages will build and publish the site at:
+
+<https://natighatan.github.io>
+
+The build may take a short time before the updated site is visible.
+
+## Main files
+
+- `_posts/` — published writing
+- `_pages/` — About and archive pages
+- `_config.yml` — site identity and theme configuration
+- `_data/navigation.yml` — top navigation
+- `assets/` — images and other static assets
