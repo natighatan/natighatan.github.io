@@ -59,7 +59,7 @@ plugins:
 author:
   name   : "Nati Ghatan"
   avatar : "/assets/images/profile-photo.jpg"
-  bio    : "Writing, essays, and notes."
+  bio    : "Curiosity, discovery, and the unexpected connections between things."
   links:
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook"
