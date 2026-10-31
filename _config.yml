@@ -58,7 +58,7 @@ plugins:
 
 author:
   name   : "Natighatan"
-  avatar : "/assets/images/bio-photo.jpg"
+  avatar : "/assets/images/profile-photo.jpg"
   bio    : "Writing, essays, and notes."
   links:
     - label: "Website"
