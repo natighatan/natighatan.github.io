@@ -1,6 +1,7 @@
 ---
 title: "The Median Isn't the Message"
 date: 2026-10-30
+classes: article-justified
 categories:
   - Essays
 tags:
