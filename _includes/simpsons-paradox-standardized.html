@@ -1,50 +1,48 @@
 <section class="simpsons-demo" data-simpsons-demo="shared" aria-labelledby="simpsons-standardized-title">
-  <h3 id="simpsons-standardized-title">Compare hospitals with the same patient mix</h3>
-  <p>Choose the share of mild cases in the shared standardized population. The rest are severe cases.</p>
+  <header class="sp-demo-header">
+    <p class="sp-kicker">Interactive model / Standardized comparison</p>
+    <h3 id="simpsons-standardized-title">Give both hospitals the same mix.</h3>
+    <p>One shared patient distribution gives both hospitals identical severity weights.</p>
+  </header>
 
   <label class="sp-control sp-control-single" for="sp-shared-slider">
-    <span class="sp-control-heading">Shared population: mild cases</span>
-    <span class="sp-control-value" data-shared-value>50%</span>
+    <span class="sp-control-top"><span class="sp-hospital-name">Shared population</span><output class="sp-control-value" data-shared-value>50% mild</output></span>
     <input id="sp-shared-slider" type="range" min="0" max="100" step="1" value="50" data-shared-slider aria-describedby="sp-shared-help">
+    <span class="sp-range-ends"><span>0% mild / 100% severe</span><span>100% mild / 0% severe</span></span>
     <span class="sp-sr-only" id="sp-shared-help">Percentage of the shared standardized population with mild conditions. The rest have severe conditions.</span>
   </label>
 
-  <div class="sp-legend" aria-label="Patient severity legend">
-    <span><span class="sp-swatch sp-mild"></span>Mild cases</span>
-    <span><span class="sp-swatch sp-severe"></span>Severe cases</span>
-  </div>
-  <div class="sp-distributions" aria-label="Shared standardized patient distribution">
-    <div class="sp-row">
-      <span class="sp-row-name"><span class="sp-hospital-dot sp-hospital-a"></span>Hospital A</span>
-      <div class="sp-stack" role="img" aria-label="Shared population for Hospital A: 50% mild cases and 50% severe cases" data-mix-bar="a">
-        <span class="sp-stack-mild" data-mild-fill="a" style="width: 50%"></span><span class="sp-stack-severe" data-severe-fill="a" style="width: 50%"></span>
-      </div>
-      <span class="sp-mix-label" data-mix-label="a">50% mild · 50% severe</span>
+  <div class="sp-shared-mix">
+    <div class="sp-mix-caption"><strong>Same patient mix for both hospitals</strong><output class="sp-mix-label" data-mix-label="shared">50% mild / 50% severe</output></div>
+    <div class="sp-stack" role="img" aria-label="Shared standardized population: 50% mild cases and 50% severe cases" data-mix-bar="shared">
+      <span class="sp-stack-mild" data-mild-fill="shared" style="width: 50%"></span><span class="sp-stack-severe" data-severe-fill="shared" style="width: 50%"></span>
     </div>
-    <div class="sp-row">
-      <span class="sp-row-name"><span class="sp-hospital-dot sp-hospital-b"></span>Hospital B</span>
-      <div class="sp-stack" role="img" aria-label="Shared population for Hospital B: 50% mild cases and 50% severe cases" data-mix-bar="b">
-        <span class="sp-stack-mild" data-mild-fill="b" style="width: 50%"></span><span class="sp-stack-severe" data-severe-fill="b" style="width: 50%"></span>
-      </div>
-      <span class="sp-mix-label" data-mix-label="b">50% mild · 50% severe</span>
+    <div class="sp-legend" aria-label="Patient severity legend">
+      <span><span class="sp-swatch sp-mild"></span>Mild cases</span>
+      <span><span class="sp-swatch sp-severe"></span>Severe cases</span>
     </div>
   </div>
 
-  <h4 class="sp-subheading">Standardized overall success rate</h4>
-  <div class="sp-rates" aria-label="Standardized success rate comparison">
-    <div class="sp-rate-row">
-      <span class="sp-row-name"><span class="sp-hospital-dot sp-hospital-a"></span>Hospital A</span>
+  <h4 class="sp-chart-title">Expected success with these same weights</h4>
+  <div class="sp-hospital-grid sp-rate-grid">
+    <article class="sp-hospital-card sp-hospital-card-a">
+      <h5><span class="sp-hospital-dot sp-hospital-a"></span>Hospital A</h5>
+      <div class="sp-rate-caption"><span>Standardized success</span><output class="sp-rate-value" data-rate-value="a">50.00%</output></div>
       <div class="sp-rate-track" role="progressbar" aria-label="Hospital A standardized expected success rate" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" data-rate-track="a"><span class="sp-rate-fill sp-hospital-a" data-rate-fill="a" style="width: 50%"></span></div>
-      <span class="sp-rate-value" data-rate-value="a">50.00%</span>
-    </div>
-    <div class="sp-rate-row">
-      <span class="sp-row-name"><span class="sp-hospital-dot sp-hospital-b"></span>Hospital B</span>
+    </article>
+    <article class="sp-hospital-card sp-hospital-card-b">
+      <h5><span class="sp-hospital-dot sp-hospital-b"></span>Hospital B</h5>
+      <div class="sp-rate-caption"><span>Standardized success</span><output class="sp-rate-value" data-rate-value="b">62.50%</output></div>
       <div class="sp-rate-track" role="progressbar" aria-label="Hospital B standardized expected success rate" aria-valuemin="0" aria-valuemax="100" aria-valuenow="62.5" data-rate-track="b"><span class="sp-rate-fill sp-hospital-b" data-rate-fill="b" style="width: 62.5%"></span></div>
-      <span class="sp-rate-value" data-rate-value="b">62.50%</span>
-    </div>
+    </article>
   </div>
-  <p class="sp-result" aria-live="polite" data-result>With the same 50/50 patient mix, Hospital B's modeled overall rate is higher by 12.50 percentage points.</p>
-  <p class="sp-reminder">Both hospitals are evaluated with identical severity weights. Hospital B remains ahead because its illustrative success rate is higher in both groups.</p>
-  <p class="sp-caveat">These are weighted expected rates under fixed, illustrative subgroup probabilities. Standardizing these severity weights does not remove other possible confounding or sampling uncertainty, and does not establish a causal treatment effect.</p>
+
+  <div class="sp-verdict" role="status" aria-live="polite">
+    <span class="sp-verdict-label">Overall comparison</span>
+    <strong data-winner>Hospital B leads</strong>
+    <span class="sp-verdict-gap" data-gap>12.50 pp</span>
+  </div>
+  <p class="sp-reminder">Hospital B remains ahead at every shared mix because its illustrative success rate is higher in both severity groups.</p>
+  <p class="sp-caveat">Standardization aligns these severity weights; it does not remove other possible confounding or sampling uncertainty, or establish a causal treatment effect.</p>
 </section>
 <script src="{{ '/assets/js/simpsons-paradox.js' | relative_url }}" defer></script>

@@ -8,68 +8,80 @@
 }
 
 .simpsons-demo {
-  margin: 2.5rem 0;
-  padding: 1.25rem;
-  border: 1px solid rgba(127, 127, 127, 0.35);
-  border-radius: 0.5rem;
-  background: rgba(127, 127, 127, 0.04);
+  margin: 3rem 0;
+  padding: clamp(1rem, 3vw, 1.75rem);
+  border: 1px solid rgba(100, 115, 130, 0.42);
+  border-left: 5px solid #3977a8;
+  border-radius: 0.8rem;
+  background: rgba(127, 127, 127, 0.075);
+  box-shadow: 0 0.35rem 1.25rem rgba(25, 35, 45, 0.07);
   color: inherit;
 }
 
-.simpsons-demo h3 {
-  margin-top: 0;
+.sp-demo-header {
+  margin-bottom: 1.4rem;
 }
 
-.simpsons-demo p:last-of-type {
-  margin-bottom: 0.75rem;
+.sp-demo-header h3 {
+  margin: 0.2rem 0 0.45rem;
+  font-size: 1.4rem;
+}
+
+.sp-demo-header p:last-child {
+  margin: 0;
+  opacity: 0.82;
+}
+
+.sp-kicker {
+  margin: 0;
+  color: #3977a8;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  line-height: 1.4;
+  text-transform: uppercase;
 }
 
 .sp-controls {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.25rem;
-  margin: 1.25rem 0;
+  gap: 0.85rem;
+  margin: 1.3rem 0 1.6rem;
 }
 
 .sp-control {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 0.5rem 0.75rem;
-  align-items: center;
+  display: block;
+  min-width: 0;
+  padding: 0.9rem 1rem 0.75rem;
+  border: 1px solid rgba(127, 127, 127, 0.34);
+  border-radius: 0.55rem;
+  background: rgba(127, 127, 127, 0.045);
   color: inherit;
 }
 
 .sp-control-single {
-  margin: 1.25rem 0;
+  margin: 1.3rem 0 1.6rem;
 }
 
-.sp-control-heading,
-.sp-row-name {
+.sp-control-top,
+.sp-range-ends,
+.sp-mix-caption,
+.sp-rate-caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.sp-control-top {
+  margin-bottom: 0.4rem;
+}
+
+.sp-hospital-name {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  font-weight: 600;
-}
-
-.sp-control-value,
-.sp-rate-value {
-  font-variant-numeric: tabular-nums;
-  font-weight: 600;
-  white-space: nowrap;
-}
-
-.sp-control input[type="range"] {
-  grid-column: 1 / -1;
-  width: 100%;
-  margin: 0.25rem 0;
-  accent-color: #3977a8;
-  cursor: pointer;
-}
-
-.sp-control input[type="range"]:focus-visible,
-.sp-reset:focus-visible {
-  outline: 3px solid #3977a8;
-  outline-offset: 3px;
+  gap: 0.45rem;
+  font-weight: 700;
 }
 
 .sp-hospital-dot,
@@ -89,21 +101,69 @@
   background-color: #b6533c;
 }
 
+.sp-control-value,
+.sp-mix-label,
+.sp-rate-value,
+.sp-verdict-gap {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.sp-control-value {
+  font-size: 1.08rem;
+}
+
+.sp-control input[type="range"] {
+  display: block;
+  width: 100%;
+  margin: 0.65rem 0 0.35rem;
+  accent-color: #3977a8;
+  cursor: pointer;
+}
+
+.sp-control input[type="range"]:focus-visible,
+.sp-reset:focus-visible {
+  outline: 3px solid #3977a8;
+  outline-offset: 3px;
+}
+
+.sp-range-ends {
+  color: inherit;
+  font-size: 0.73rem;
+  opacity: 0.68;
+}
+
+.sp-chart-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0.5rem 0 0.7rem;
+}
+
+.sp-chart-heading h4,
+.sp-chart-title {
+  margin: 0;
+  font-size: 1rem;
+}
+
 .sp-legend {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem 1.25rem;
-  margin: 1rem 0 0.75rem;
-  font-size: 0.9em;
+  gap: 0.4rem 0.9rem;
+  font-size: 0.78rem;
 }
 
 .sp-legend > span {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.35rem;
 }
 
 .sp-swatch {
+  width: 0.65rem;
+  height: 0.65rem;
   border-radius: 0.15rem;
 }
 
@@ -117,12 +177,41 @@
   background-color: #d6a34b;
 }
 
-.sp-row {
+.sp-hospital-grid {
   display: grid;
-  grid-template-columns: minmax(7rem, 0.8fr) minmax(5rem, 2fr) minmax(9rem, 1.2fr);
-  gap: 0.75rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.sp-hospital-card {
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid rgba(127, 127, 127, 0.34);
+  border-top: 3px solid #3977a8;
+  border-radius: 0.55rem;
+  background: rgba(127, 127, 127, 0.045);
+}
+
+.sp-hospital-card-b {
+  border-top-color: #b6533c;
+}
+
+.sp-hospital-card h5 {
+  display: flex;
   align-items: center;
-  margin: 0.75rem 0;
+  gap: 0.45rem;
+  margin: 0 0 1rem;
+  font-size: 1rem;
+}
+
+.sp-mix-caption,
+.sp-rate-caption {
+  margin-bottom: 0.45rem;
+  font-size: 0.82rem;
+}
+
+.sp-mix-label {
+  font-size: 0.78rem;
 }
 
 .sp-stack,
@@ -133,7 +222,7 @@
   height: 1.15rem;
   border: 1px solid rgba(127, 127, 127, 0.4);
   border-radius: 999px;
-  background: rgba(127, 127, 127, 0.12);
+  background: rgba(127, 127, 127, 0.13);
 }
 
 .sp-stack-mild,
@@ -141,25 +230,17 @@
 .sp-rate-fill {
   display: block;
   height: 100%;
-  transition: width 120ms ease-out;
+  transition: width 140ms ease-out;
 }
 
-.sp-mix-label {
-  font-size: 0.9em;
-  font-variant-numeric: tabular-nums;
-  white-space: nowrap;
+.sp-rate-caption {
+  align-items: baseline;
+  margin-top: 1.2rem;
 }
 
-.sp-subheading {
-  margin: 1.5rem 0 0.5rem;
-}
-
-.sp-rate-row {
-  display: grid;
-  grid-template-columns: minmax(7rem, 0.8fr) minmax(5rem, 2fr) minmax(5.5rem, 0.7fr);
-  gap: 0.75rem;
-  align-items: center;
-  margin: 0.75rem 0;
+.sp-rate-value {
+  font-size: 1.65rem;
+  letter-spacing: -0.025em;
 }
 
 .sp-rate-fill.sp-hospital-a {
@@ -170,40 +251,79 @@
   background-color: #b6533c;
 }
 
-.sp-result {
-  margin: 1rem 0 0.5rem;
-  font-weight: 600;
+.sp-verdict {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.7rem;
+  margin-top: 1rem;
+  padding: 0.75rem 0.9rem;
+  border-radius: 0.45rem;
+  background: rgba(57, 119, 168, 0.1);
+}
+
+.sp-verdict-label {
+  color: inherit;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  opacity: 0.72;
+  text-transform: uppercase;
+}
+
+.sp-verdict strong {
+  font-size: 1rem;
+}
+
+.sp-verdict-gap {
+  margin-left: auto;
+  color: #3977a8;
+  font-size: 1.05rem;
 }
 
 .sp-reminder {
-  margin: 0.5rem 0;
+  margin: 0.85rem 0 0.45rem;
+  font-size: 0.9rem;
 }
 
 .sp-caveat {
-  font-size: 0.86em;
-  opacity: 0.8;
+  margin: 0.4rem 0 0.85rem;
+  font-size: 0.79rem;
+  opacity: 0.72;
+}
+
+.sp-shared-mix {
+  padding: 1rem;
+  border: 1px solid rgba(127, 127, 127, 0.34);
+  border-radius: 0.55rem;
+  background: rgba(127, 127, 127, 0.045);
+}
+
+.sp-shared-mix .sp-stack {
+  height: 1.45rem;
+}
+
+.sp-shared-mix .sp-legend {
+  margin-top: 0.6rem;
+}
+
+.sp-chart-title {
+  margin: 1.35rem 0 0.7rem;
 }
 
 .sp-reset {
-  padding: 0.4rem 0.75rem;
+  padding: 0.42rem 0.75rem;
   border: 1px solid rgba(127, 127, 127, 0.5);
-  border-radius: 0.25rem;
+  border-radius: 0.3rem;
   background: transparent;
   color: inherit;
   font: inherit;
+  font-size: 0.83rem;
   cursor: pointer;
 }
 
 .sp-reset:hover {
   background: rgba(127, 127, 127, 0.12);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .sp-stack-mild,
-  .sp-stack-severe,
-  .sp-rate-fill {
-    transition: none;
-  }
 }
 
 .sp-sr-only {
@@ -218,34 +338,33 @@
   border: 0;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 620px) {
   .simpsons-demo {
+    margin: 2rem -0.35rem;
     padding: 1rem;
+    border-radius: 0.6rem;
   }
 
-  .sp-controls {
+  .sp-controls,
+  .sp-hospital-grid {
     grid-template-columns: 1fr;
-    gap: 0.75rem;
   }
 
-  .sp-row,
-  .sp-rate-row {
-    grid-template-columns: minmax(0, 1fr) auto;
-    gap: 0.4rem 0.75rem;
+  .sp-chart-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.4rem;
   }
 
-  .sp-row-name {
-    grid-column: 1 / -1;
+  .sp-verdict-gap {
+    margin-left: auto;
   }
+}
 
-  .sp-stack,
-  .sp-rate-track {
-    grid-column: 1;
-  }
-
-  .sp-mix-label,
-  .sp-rate-value {
-    grid-column: 2;
-    grid-row: 2;
+@media (prefers-reduced-motion: reduce) {
+  .sp-stack-mild,
+  .sp-stack-severe,
+  .sp-rate-fill {
+    transition: none;
   }
 }
