@@ -100,3 +100,7 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
+
+# Load MathJax so LaTeX equations render in published pages.
+head_scripts:
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js
