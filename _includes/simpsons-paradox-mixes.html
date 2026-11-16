@@ -1,0 +1,59 @@
+<section class="simpsons-demo" data-simpsons-demo="separate" aria-labelledby="simpsons-mixes-title">
+  <h3 id="simpsons-mixes-title">Explore the different patient mixes</h3>
+  <p>Change the share of mild cases at each hospital. The remaining patients are severe cases.</p>
+
+  <div class="sp-controls">
+    <label class="sp-control" for="sp-mixes-a-slider">
+      <span class="sp-control-heading"><span class="sp-hospital-dot sp-hospital-a"></span>Hospital A: mild cases</span>
+      <span class="sp-control-value" data-mild-value="a">90%</span>
+      <input id="sp-mixes-a-slider" type="range" min="0" max="100" step="1" value="90" data-mild-slider="a" aria-describedby="sp-mixes-a-help">
+      <span class="sp-sr-only" id="sp-mixes-a-help">Percentage of Hospital A patients with mild conditions. The rest have severe conditions.</span>
+    </label>
+    <label class="sp-control" for="sp-mixes-b-slider">
+      <span class="sp-control-heading"><span class="sp-hospital-dot sp-hospital-b"></span>Hospital B: mild cases</span>
+      <span class="sp-control-value" data-mild-value="b">20%</span>
+      <input id="sp-mixes-b-slider" type="range" min="0" max="100" step="1" value="20" data-mild-slider="b" aria-describedby="sp-mixes-b-help">
+      <span class="sp-sr-only" id="sp-mixes-b-help">Percentage of Hospital B patients with mild conditions. The rest have severe conditions.</span>
+    </label>
+  </div>
+
+  <div class="sp-legend" aria-label="Patient severity legend">
+    <span><span class="sp-swatch sp-mild"></span>Mild cases</span>
+    <span><span class="sp-swatch sp-severe"></span>Severe cases</span>
+  </div>
+  <div class="sp-distributions" aria-label="Patient distribution by hospital">
+    <div class="sp-row">
+      <span class="sp-row-name"><span class="sp-hospital-dot sp-hospital-a"></span>Hospital A</span>
+      <div class="sp-stack" role="img" aria-label="Hospital A: 90% mild cases and 10% severe cases" data-mix-bar="a">
+        <span class="sp-stack-mild" data-mild-fill="a" style="width: 90%"></span><span class="sp-stack-severe" data-severe-fill="a" style="width: 10%"></span>
+      </div>
+      <span class="sp-mix-label" data-mix-label="a">90% mild · 10% severe</span>
+    </div>
+    <div class="sp-row">
+      <span class="sp-row-name"><span class="sp-hospital-dot sp-hospital-b"></span>Hospital B</span>
+      <div class="sp-stack" role="img" aria-label="Hospital B: 20% mild cases and 80% severe cases" data-mix-bar="b">
+        <span class="sp-stack-mild" data-mild-fill="b" style="width: 20%"></span><span class="sp-stack-severe" data-severe-fill="b" style="width: 80%"></span>
+      </div>
+      <span class="sp-mix-label" data-mix-label="b">20% mild · 80% severe</span>
+    </div>
+  </div>
+
+  <h4 class="sp-subheading">Modeled overall success rate</h4>
+  <div class="sp-rates" aria-label="Overall success rate comparison">
+    <div class="sp-rate-row">
+      <span class="sp-row-name"><span class="sp-hospital-dot sp-hospital-a"></span>Hospital A</span>
+      <div class="sp-rate-track" role="progressbar" aria-label="Hospital A modeled overall success rate" aria-valuemin="0" aria-valuemax="100" aria-valuenow="82" data-rate-track="a"><span class="sp-rate-fill sp-hospital-a" data-rate-fill="a" style="width: 82%"></span></div>
+      <span class="sp-rate-value" data-rate-value="a">82.00%</span>
+    </div>
+    <div class="sp-rate-row">
+      <span class="sp-row-name"><span class="sp-hospital-dot sp-hospital-b"></span>Hospital B</span>
+      <div class="sp-rate-track" role="progressbar" aria-label="Hospital B modeled overall success rate" aria-valuemin="0" aria-valuemax="100" aria-valuenow="43" data-rate-track="b"><span class="sp-rate-fill sp-hospital-b" data-rate-fill="b" style="width: 43%"></span></div>
+      <span class="sp-rate-value" data-rate-value="b">43.00%</span>
+    </div>
+  </div>
+  <p class="sp-result" aria-live="polite" data-result>At these patient mixes, Hospital A has a higher modeled overall rate by 39.00 percentage points.</p>
+  <p class="sp-reminder">Hospital B's illustrative success rate is higher within both severity groups: 95% vs. 90% for mild cases, and 30% vs. 10% for severe cases.</p>
+  <p class="sp-caveat">These are weighted expected rates under fixed, illustrative subgroup probabilities—not patient counts or causal evidence. Changing the mix changes the weights, not the subgroup rates.</p>
+  <button class="sp-reset" type="button" data-reset-mixes>Reset patient mixes</button>
+</section>
+<script src="{{ '/assets/js/simpsons-paradox.js' | relative_url }}" defer></script>

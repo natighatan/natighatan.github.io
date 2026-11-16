@@ -6,3 +6,246 @@
 .article-justified .page__content p {
   text-align: justify;
 }
+
+.simpsons-demo {
+  margin: 2.5rem 0;
+  padding: 1.25rem;
+  border: 1px solid rgba(127, 127, 127, 0.35);
+  border-radius: 0.5rem;
+  background: rgba(127, 127, 127, 0.04);
+  color: inherit;
+}
+
+.simpsons-demo h3 {
+  margin-top: 0;
+}
+
+.simpsons-demo p:last-of-type {
+  margin-bottom: 0.75rem;
+}
+
+.sp-controls {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin: 1.25rem 0;
+}
+
+.sp-control {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.5rem 0.75rem;
+  align-items: center;
+  color: inherit;
+}
+
+.sp-control-single {
+  margin: 1.25rem 0;
+}
+
+.sp-control-heading,
+.sp-row-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+.sp-control-value,
+.sp-rate-value {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.sp-control input[type="range"] {
+  grid-column: 1 / -1;
+  width: 100%;
+  margin: 0.25rem 0;
+  accent-color: #3977a8;
+  cursor: pointer;
+}
+
+.sp-control input[type="range"]:focus-visible,
+.sp-reset:focus-visible {
+  outline: 3px solid #3977a8;
+  outline-offset: 3px;
+}
+
+.sp-hospital-dot,
+.sp-swatch {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+}
+
+.sp-hospital-a {
+  background-color: #3977a8;
+}
+
+.sp-hospital-b {
+  background-color: #b6533c;
+}
+
+.sp-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin: 1rem 0 0.75rem;
+  font-size: 0.9em;
+}
+
+.sp-legend > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.sp-swatch {
+  border-radius: 0.15rem;
+}
+
+.sp-mild,
+.sp-stack-mild {
+  background-color: #72a88f;
+}
+
+.sp-severe,
+.sp-stack-severe {
+  background-color: #d6a34b;
+}
+
+.sp-row {
+  display: grid;
+  grid-template-columns: minmax(7rem, 0.8fr) minmax(5rem, 2fr) minmax(9rem, 1.2fr);
+  gap: 0.75rem;
+  align-items: center;
+  margin: 0.75rem 0;
+}
+
+.sp-stack,
+.sp-rate-track {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  height: 1.15rem;
+  border: 1px solid rgba(127, 127, 127, 0.4);
+  border-radius: 999px;
+  background: rgba(127, 127, 127, 0.12);
+}
+
+.sp-stack-mild,
+.sp-stack-severe,
+.sp-rate-fill {
+  display: block;
+  height: 100%;
+  transition: width 120ms ease-out;
+}
+
+.sp-mix-label {
+  font-size: 0.9em;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.sp-subheading {
+  margin: 1.5rem 0 0.5rem;
+}
+
+.sp-rate-row {
+  display: grid;
+  grid-template-columns: minmax(7rem, 0.8fr) minmax(5rem, 2fr) minmax(5.5rem, 0.7fr);
+  gap: 0.75rem;
+  align-items: center;
+  margin: 0.75rem 0;
+}
+
+.sp-rate-fill.sp-hospital-a {
+  background-color: #3977a8;
+}
+
+.sp-rate-fill.sp-hospital-b {
+  background-color: #b6533c;
+}
+
+.sp-result {
+  margin: 1rem 0 0.5rem;
+  font-weight: 600;
+}
+
+.sp-reminder {
+  margin: 0.5rem 0;
+}
+
+.sp-caveat {
+  font-size: 0.86em;
+  opacity: 0.8;
+}
+
+.sp-reset {
+  padding: 0.4rem 0.75rem;
+  border: 1px solid rgba(127, 127, 127, 0.5);
+  border-radius: 0.25rem;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.sp-reset:hover {
+  background: rgba(127, 127, 127, 0.12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sp-stack-mild,
+  .sp-stack-severe,
+  .sp-rate-fill {
+    transition: none;
+  }
+}
+
+.sp-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 600px) {
+  .simpsons-demo {
+    padding: 1rem;
+  }
+
+  .sp-controls {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .sp-row,
+  .sp-rate-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.4rem 0.75rem;
+  }
+
+  .sp-row-name {
+    grid-column: 1 / -1;
+  }
+
+  .sp-stack,
+  .sp-rate-track {
+    grid-column: 1;
+  }
+
+  .sp-mix-label,
+  .sp-rate-value {
+    grid-column: 2;
+    grid-row: 2;
+  }
+}
