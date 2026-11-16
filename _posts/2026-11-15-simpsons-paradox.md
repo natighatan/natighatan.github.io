@@ -7,8 +7,8 @@ tags:
   - statistics
   - probability
 header:
-  image: /assets/images/essays/simpsons-paradox-in-healthcare.png
-  teaser: /assets/images/essays/simpsons-paradox-in-healthcare.png
+  image: /assets/images/essays/simpsons-paradox-hospital-balance-scale.png
+  teaser: /assets/images/essays/simpsons-paradox-hospital-balance-scale.png
 ---
 As LLMs become increasingly capable, it progressively becomes tempting to delegate not just our work, but our thinking to them as well. Because of that, every now and then I enjoy revisiting fundamental ideas, challenging my intuition, and making sure I actually understand foundational concepts rather than simply accepting a convincing explanation.
 
